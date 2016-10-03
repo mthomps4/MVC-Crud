@@ -16,12 +16,5 @@ namespace MVC_Crud.Models
     public class PlanetContext : DbContext
     {
         public DbSet<Planet> Planets { get; set; }
-
-        public PlanetContext()
-        {
-            Database.SetInitializer<PlanetContext>(
-                new DropCreateDatabaseIfModelChanges<PlanetContext>()
-                );
-        }
     }
 }
