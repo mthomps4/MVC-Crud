@@ -10,10 +10,18 @@ namespace MVC_Crud.Models
     {
         public int PlanetID { get; set; }
         public string Name { get; set; }
+        public long Population { get; set; }
     }
 
     public class PlanetContext : DbContext
     {
         public DbSet<Planet> Planets { get; set; }
+
+        public PlanetContext()
+        {
+            Database.SetInitializer<PlanetContext>(
+                new DropCreateDatabaseIfModelChanges<PlanetContext>()
+                );
+        }
     }
 }
